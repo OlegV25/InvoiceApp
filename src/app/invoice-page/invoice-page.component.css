@@ -1,0 +1,22 @@
+.invoice-page{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 100px auto;
+}
+
+.invoice-search{
+  margin: 20px 0;
+  width: 350px;
+}
+
+.invoice-table-list{
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.full-space{
+  width: 100%
+}

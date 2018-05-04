@@ -1,0 +1,20 @@
+.modal {
+	display: block;
+}
+
+.modal-backdrop{
+  opacity: 0.6;
+}
+
+.modal-buttons{
+  width: 100px;
+}
+
+.modal-header::before, .modal-header::after{
+	content: none;
+}
+.modal-invoice-header{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}

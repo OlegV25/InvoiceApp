@@ -1,0 +1,17 @@
+.invoice-table{
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  width: 350px;
+  text-align: center;
+}
+
+.table thead th{
+  border: 1px solid #ddd;
+  border-width: 0 1px 1px 0;
+  text-align: center;
+}
+
+.table tbody tr td{
+  border: 1px solid #ddd;
+  border-width: 0 1px 1px 0;
+}
