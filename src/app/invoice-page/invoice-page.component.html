@@ -8,20 +8,18 @@
     placeholder="Search">
 
   <app-invoice-table
-    [invoiceList]="invoiceList"
-    (onDelete)="addOrRemoveHeandler.apply(this, $event)"
-    (onDuplicate)="addOrRemoveHeandler.apply(this, $event)"
+    [searchString]="searchString"
     class="invoice-table-list">
   </app-invoice-table>
 
-  <button (click)="modalChangeHeandler()" type="button" class="btn">
+  <button (click)="invoiceService.toggleAddModal()" type="button" class="btn">
     <span class="glyphicon glyphicon-plus"></span> Add invoce
   </button>
 
   <app-invoice-modal
+    [isOpen]="invoiceService.isAddModalOpen"
     (onCloseEvent)="modalChangeHeandler()"
-    (onAdd)="addOrRemoveHeandler.apply(this, $event)"
-    [isOpen]="isModalInvoiceOpen">
+    (onAdd)="addOrRemoveHeandler.apply(this, $event)">
   </app-invoice-modal>
 
 </div>

@@ -4,7 +4,7 @@
       <div class="modal-content">
         <div class="modal-header modal-invoice-header">
           <h4 class="modal-title">Add invoice</h4>
-          <button (click)="onCloseEvent.emit()" type="button" class="btn modal-buttons">
+          <button (click)="todoService.toggleAddModal()" type="button" class="btn modal-buttons">
             <span class="glyphicon glyphicon-remove"></span> Close
           </button>
         </div>
@@ -15,7 +15,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button (click)="onAdd.emit(['add', 0, name])" type="button" class="btn modal-buttons">
+          <button (click)="addInvoice()" type="button" class="btn modal-buttons">
             <span class="glyphicon glyphicon-plus"></span> Add
           </button>
         </div>

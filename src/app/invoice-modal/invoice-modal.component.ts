@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { InvoiceService } from '../services/invoice.service';
 
 @Component({
   selector: 'app-invoice-modal',
@@ -8,11 +9,18 @@ import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 export class InvoiceModalComponent implements OnInit {
 
-  @Input() isOpen : boolean;
-  @Output() onCloseEvent = new EventEmitter();
-  @Output() onAdd = new EventEmitter();
+  @Input() isOpen: boolean;
   name = '';
 
-  ngOnInit() {}
+  constructor(
+    private todoService: InvoiceService
+  ) { }
+
+  ngOnInit() { }
+
+  addInvoice(): void {
+    this.todoService.addInvoice(this.name);
+  }
+
 
 }

@@ -1,6 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
 import { SESSION_STORAGE, WebStorageService } from 'angular-webstorage-service';
-import { Router } from "@angular/router";
+import { Router } from '@angular/router';
 
 @Injectable()
 export class LoginDataService {
@@ -12,7 +12,7 @@ export class LoginDataService {
   defaultAuth = {
     email: 'test',
     password: 'test'
-  }
+  };
 
   login(em, pas) {
     const { password, email } = this.defaultAuth;
@@ -20,7 +20,7 @@ export class LoginDataService {
       this.storage.set('authData', { email, password });
       this.router.navigate(['invoice']);
     } else {
-      alert("Wrong!")
+      alert('Wrong!');
     }
   }
 

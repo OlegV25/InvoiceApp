@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginDataService } from '../login-data.service';
+import { LoginDataService } from '../services/login-data.service';
 
 @Component({
   selector: 'app-login-page',
@@ -12,7 +12,7 @@ export class LoginPageComponent implements OnInit {
   email = '';
   password = '';
 
-  constructor(public loginDataService:LoginDataService) { }
+  constructor(public loginDataService: LoginDataService) { }
 
   ngOnInit() { }
 

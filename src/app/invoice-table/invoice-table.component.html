@@ -6,22 +6,10 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of invoiceList;let i = index">
-      <td>{{item}}</td>
-      <td>
-        <button
-          (click)="onDelete.emit(['remove', i])"
-          type="button"
-          class="btn">
-          <span class="glyphicon glyphicon-trash"></span> Delete
-        </button>
-        <button
-          (click)="onDuplicate.emit(['add', i, item])"
-          type="button"
-          class="btn">
-          <span class="glyphicon glyphicon-duplicate"></span> Dupliate
-        </button>
-      </td>
+    <tr app-invoice-row-id
+      *ngFor="let invoice of visibleInvoices; let i = index"
+      [invoiceData]="invoice"
+      [index]="i">
     </tr>
   </tbody>
 </table>

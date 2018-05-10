@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StorageServiceModule } from 'angular-webstorage-service';
 
@@ -9,16 +8,15 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { InvoicePageComponent } from './invoice-page/invoice-page.component';
 import { InvoiceModalComponent } from './invoice-modal/invoice-modal.component';
 import { InvoiceTableComponent } from './invoice-table/invoice-table.component';
+import { InvoiceRowComponent } from './invoice-row/invoice-row.component';
 
-import { InvoiceDataService } from './invoice-data.service';
-import { LoginDataService } from './login-data.service';
+import { LoginDataService } from './services/login-data.service';
+import { InvoiceService } from './services/invoice.service';
+
+import { AppRouter } from './app.routing';
 import { AboutGuard } from './guard';
 
-export const ROUTES: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: LoginPageComponent },
-  { path: 'invoice', component: InvoicePageComponent, canActivate: [AboutGuard]}
-];
+import './rxjs-operators';
 
 @NgModule({
   declarations: [
@@ -26,19 +24,20 @@ export const ROUTES: Routes = [
     LoginPageComponent,
     InvoicePageComponent,
     InvoiceModalComponent,
-    InvoiceTableComponent
+    InvoiceTableComponent,
+    InvoiceRowComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
     StorageServiceModule,
-    RouterModule.forRoot(ROUTES)
+    AppRouter
   ],
   providers: [
     AboutGuard,
     LoginDataService,
-    InvoiceDataService
+    InvoiceService
   ],
   bootstrap: [AppComponent]
 })
