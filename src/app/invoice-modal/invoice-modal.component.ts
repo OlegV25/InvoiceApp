@@ -20,7 +20,8 @@ export class InvoiceModalComponent implements OnInit {
 
   addInvoice(): void {
     this.todoService.addInvoice(this.name);
+    this.name = '';
+    this.todoService.toggleAddModal();
   }
-
 
 }

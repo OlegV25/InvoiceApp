@@ -37,7 +37,8 @@ export class InvoiceTableComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   filterVisibleList(serachString) {
-    return this.invoiceList.filter(item => item.title.includes(serachString));
+    return this.invoiceList.filter(item =>
+      item.title.toLowerCase().includes(serachString.toLowerCase()));
   }
 
 }
